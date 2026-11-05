@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="wrap page">
+  <h1 class="page-title">{{ .Title }}</h1>
+  {{ with site.Data.teaching }}
+  <ul class="rows">
+    {{ range . }}
+    <li>
+      <span class="row-main">{{ .course }}{{ with .instructor }} <span class="meta">(Instructor: {{ . }})</span>{{ end }}<br><span class="meta">{{ .role }}, {{ .institution }}</span></span>
+      <span class="row-date">{{ .term }}</span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+</div>
+{{ end }}
