@@ -1,6 +1,9 @@
 <footer class="site-footer">
   <div class="wrap">
-    <span>&copy; {{ now.Year }} {{ site.Params.author }}</span>
-    <a href="#top" class="to-top">Back to top</a>
+    <span>&copy; {{ now.Year }} {{ site.Params.author }} &middot; {{ site.Params.university }}</span>
+    <span class="foot-links">
+      <a href="{{ "files/cv.pdf" | relURL }}" target="_blank" rel="noopener">[cv]</a>
+      <a href="mailto:{{ site.Params.email }}">[email]</a>
+    </span>
   </div>
 </footer>
