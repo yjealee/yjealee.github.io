@@ -14,7 +14,7 @@ While the repo is private, edits are saved but not published. See "Going live" a
 | Miscellaneous tab (blank for now) | `content/miscellaneous.md` |
 | Name, title, research interests, email | `hugo.yaml` (the `params:` part) |
 | My CV | replace `static/files/cv.pdf` (keep the same name) |
-| My photo | replace `static/images/photo.jpg` (keep the same name) |
+| My photo | replace `static/photo.jpg` (keep the same name) |
 | Colors | `assets/css/style.css` (the first block) |
 
 ## Change the bio
@@ -39,7 +39,7 @@ Papers are grouped by status automatically. To mark a paper published, change `s
 Open `content/miscellaneous.md`. Type below the second `---` line. You can write plain text. Use `## Heading` for a heading and `- item` for a bullet list.
 
 ## Replace the CV or photo
-Open the folder (`static/files` or `static/images`), click Add file, then Upload files, and drag in the new file with the exact same name. Commit.
+Open the folder (`static/files`, or `static` for the photo), click Add file, then Upload files, and drag in the new file with the exact same name. Commit.
 
 ## Going live
 The automatic publishing is paused (it only runs by hand) so you don't get error emails while the repo is private. When you are ready: make the repo public (Settings, then General, then "Change visibility"), turn on Settings, then Pages, with Source set to "GitHub Actions", and ask Claude to switch the automatic publishing back on. After that, every commit goes live in about two minutes at https://yjealee.github.io/.
