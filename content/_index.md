@@ -1,5 +1,5 @@
 ---
-title: "Yoonje (Jea) Lee"
+title: "Jea (Yoonje) Lee"
 ---
 
 <!-- PLACEHOLDER BIO: replace this paragraph with your own text. -->
