@@ -9,7 +9,6 @@
     <div class="hero-text">
       <h1>{{ $p.author }}</h1>
       <p class="title-line">{{ $p.title_line }}<br>{{ $p.department }}, {{ $p.university }}</p>
-      <p class="tagline">{{ $p.tagline }}</p>
       <ul class="links">
         <li><a class="btn" href="{{ "files/cv.pdf" | relURL }}" target="_blank" rel="noopener">CV (PDF)</a></li>
         <li><a href="mailto:{{ $p.email }}">Email</a></li>
@@ -75,51 +74,6 @@
         <span class="row-main">{{ .course }}{{ with .instructor }} <span class="meta">(Instructor: {{ . }})</span>{{ end }}<br><span class="meta">{{ .role }}, {{ .institution }}</span></span>
         <span class="row-date">{{ .term }}</span>
       </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  {{ with site.Data.awards }}
-  <section id="grants">
-    <h2>Fellowships and Grants</h2>
-    <ul class="rows">
-      {{ range . }}
-      <li>
-        <span class="row-main">{{ .name }}<br><span class="meta">{{ .org }}</span></span>
-        <span class="row-date">{{ .year }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  {{ with site.Data.talks }}
-  <section id="talks">
-    <h2>Conferences and Talks</h2>
-    <ul class="rows">
-      {{ range . }}
-      <li>
-        <span class="row-main">{{ delimit .venues "; " }}</span>
-        <span class="row-date">{{ .year }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  {{ with site.Data.service }}
-  <section id="service">
-    <h2>Service</h2>
-    <ul class="rows">
-      {{ range . }}
-      {{ $year := .year }}
-      {{ range .items }}
-      <li>
-        <span class="row-main">{{ . }}</span>
-        <span class="row-date">{{ $year }}</span>
-      </li>
-      {{ end }}
       {{ end }}
     </ul>
   </section>
