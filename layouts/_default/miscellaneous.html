@@ -1,63 +1,6 @@
 {{ define "main" }}
 <div class="wrap page">
   <h1 class="page-title">{{ .Title }}</h1>
-
-  {{ with site.Data.awards }}
-  <section class="sub">
-    <h2>Fellowships and Grants</h2>
-    <ul class="rows">
-      {{ range . }}
-      <li>
-        <span class="row-main">{{ .name }}<br><span class="meta">{{ .org }}</span></span>
-        <span class="row-date">{{ .year }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  {{ with site.Data.talks }}
-  <section class="sub">
-    <h2>Conferences and Talks</h2>
-    <ul class="rows">
-      {{ range . }}
-      <li>
-        <span class="row-main">{{ delimit .venues "; " }}</span>
-        <span class="row-date">{{ .year }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  {{ with site.Data.service }}
-  <section class="sub">
-    <h2>Service</h2>
-    <ul class="rows">
-      {{ range . }}
-      {{ $year := .year }}
-      {{ range .items }}
-      <li>
-        <span class="row-main">{{ . }}</span>
-        <span class="row-date">{{ $year }}</span>
-      </li>
-      {{ end }}
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  {{ with site.Data.skills }}
-  <section class="sub">
-    <h2>Skills and Fieldwork</h2>
-    <ul class="rows">
-      {{ range . }}
-      <li>
-        <span class="row-main"><strong>{{ .label }}:</strong> {{ .value }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
+  {{ .Content }}
 </div>
 {{ end }}
