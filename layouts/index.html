@@ -1,88 +1,57 @@
 {{ define "main" }}
 {{ $p := site.Params }}
-<span id="top"></span>
-<section class="hero">
-  <div class="wrap hero-grid">
+<div class="wrap home">
+  <aside class="sidebar">
     {{ if fileExists "static/images/photo.jpg" }}
     <img class="photo" src="{{ "images/photo.jpg" | relURL }}" alt="Portrait of {{ $p.author }}" width="220" height="275">
     {{ end }}
-    <div class="hero-text">
-      <h1>{{ $p.author }}</h1>
-      <p class="title-line">{{ $p.title_line }}<br>{{ $p.department }}, {{ $p.university }}</p>
-      <ul class="links">
-        <li><a class="btn" href="{{ "files/cv.pdf" | relURL }}" target="_blank" rel="noopener">CV (PDF)</a></li>
-        <li><a href="mailto:{{ $p.email }}">Email</a></li>
-        {{ with $p.social.scholar }}<li><a href="{{ . }}" target="_blank" rel="noopener">Google Scholar</a></li>{{ end }}
-        {{ with $p.social.github }}<li><a href="{{ . }}" target="_blank" rel="noopener">GitHub</a></li>{{ end }}
-        {{ with $p.social.linkedin }}<li><a href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a></li>{{ end }}
-        {{ with $p.social.orcid }}<li><a href="{{ . }}" target="_blank" rel="noopener">ORCID</a></li>{{ end }}
-        {{ with $p.social.twitter }}<li><a href="{{ . }}" target="_blank" rel="noopener">X</a></li>{{ end }}
-      </ul>
-    </div>
-  </div>
-</section>
+    <h1>{{ $p.author }}</h1>
+    <p class="title-line">{{ $p.title_line }}<br>{{ $p.department }}<br>{{ $p.university }}</p>
+    <p class="interests"><span class="label">Research interests</span><br>{{ $p.research_interests }}</p>
+  </aside>
 
-<div class="wrap">
-  <section id="about" class="bio">
-    {{ .Content }}
-  </section>
+  <div class="content">
+    <section id="about" class="bio">
+      {{ .Content }}
+    </section>
 
-  {{ $papers := site.Data.papers }}
-  {{ if $papers }}
-  <section id="research">
-    <h2>Research</h2>
-    {{ $groups := slice (dict "label" "Publications" "keys" (slice "published" "accepted")) (dict "label" "Under Review" "keys" (slice "under review" "revise and resubmit")) (dict "label" "Working Papers" "keys" (slice "working paper")) (dict "label" "Work in Progress" "keys" (slice "work in progress")) }}
-    {{ range $groups }}
-      {{ $keys := .keys }}
-      {{ $label := .label }}
-      {{ $items := where $papers "status" "in" $keys }}
-      {{ if $items }}
-      <h3>{{ $label }}</h3>
-      <ul class="papers">
-        {{ range $items }}
-        <li>
-          <div class="paper-title">
-            {{ if .pdf }}<a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">&ldquo;{{ .title }}&rdquo;</a>
-            {{ else if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">&ldquo;{{ .title }}&rdquo;</a>
-            {{ else }}<span>&ldquo;{{ .title }}&rdquo;</span>{{ end }}
-          </div>
-          <div class="meta">
-            {{ with .coauthors }}{{ if . }}with {{ delimit . ", " " and " }}{{ end }}{{ end }}
-            {{ with .venue }}<em>{{ . }}</em>{{ end }}
-            {{ with .note }}{{ . }}{{ end }}
-          </div>
-          {{ with .abstract }}
-          <details>
-            <summary>Abstract</summary>
-            <p>{{ . }}</p>
-          </details>
+    {{ $papers := site.Data.papers }}
+    {{ if $papers }}
+    <section id="research">
+      <h2>Research</h2>
+      {{ $groups := slice (dict "label" "Publications" "keys" (slice "published" "accepted")) (dict "label" "Under Review" "keys" (slice "under review" "revise and resubmit")) (dict "label" "Working Papers" "keys" (slice "working paper")) (dict "label" "Work in Progress" "keys" (slice "work in progress")) }}
+      {{ range $groups }}
+        {{ $keys := .keys }}
+        {{ $label := .label }}
+        {{ $items := where $papers "status" "in" $keys }}
+        {{ if $items }}
+        <h3>{{ $label }}</h3>
+        <ul class="papers">
+          {{ range $items }}
+          <li>
+            <div class="paper-title">
+              {{ if .pdf }}<a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">&ldquo;{{ .title }}&rdquo;</a>
+              {{ else if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">&ldquo;{{ .title }}&rdquo;</a>
+              {{ else }}<span>&ldquo;{{ .title }}&rdquo;</span>{{ end }}
+            </div>
+            <div class="meta">
+              {{ with .coauthors }}{{ if . }}with {{ delimit . ", " " and " }}{{ end }}{{ end }}
+              {{ with .venue }}<em>{{ . }}</em>{{ end }}
+              {{ with .note }}{{ . }}{{ end }}
+            </div>
+            {{ with .abstract }}
+            <details>
+              <summary>Abstract</summary>
+              <p>{{ . }}</p>
+            </details>
+            {{ end }}
+          </li>
           {{ end }}
-        </li>
+        </ul>
         {{ end }}
-      </ul>
       {{ end }}
+    </section>
     {{ end }}
-  </section>
-  {{ end }}
-
-  {{ with site.Data.teaching }}
-  <section id="teaching">
-    <h2>Teaching</h2>
-    <ul class="rows">
-      {{ range . }}
-      <li>
-        <span class="row-main">{{ .course }}{{ with .instructor }} <span class="meta">(Instructor: {{ . }})</span>{{ end }}<br><span class="meta">{{ .role }}, {{ .institution }}</span></span>
-        <span class="row-date">{{ .term }}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </section>
-  {{ end }}
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><a href="mailto:{{ $p.email }}">{{ $p.email }}</a><br>
-    {{ $p.department }}, {{ $p.university }}</p>
-  </section>
+  </div>
 </div>
 {{ end }}
