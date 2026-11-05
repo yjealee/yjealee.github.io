@@ -2,8 +2,8 @@
 {{ $p := site.Params }}
 <div class="wrap home">
   <aside class="sidebar">
-    {{ if fileExists "static/images/photo.jpg" }}
-    <img class="photo" src="{{ "images/photo.jpg" | relURL }}" alt="Portrait of {{ $p.author }}" width="220" height="275">
+    {{ if fileExists "static/photo.jpg" }}
+    <img class="photo" src="{{ "photo.jpg" | relURL }}" alt="Portrait of {{ $p.author }}" width="220" height="275">
     {{ end }}
     <h1>{{ $p.author }}</h1>
     <p class="title-line">{{ $p.title_line }}<br>{{ $p.department }}<br>{{ $p.university }}</p>
