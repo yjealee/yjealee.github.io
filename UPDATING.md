@@ -18,7 +18,7 @@ While the repo is private, edits are saved but not published. See "Going live" a
 | Colors | `assets/css/style.css` (the first block) |
 
 ## Change the bio
-Open `content/_index.md`. Replace the paragraph. Delete the line that starts with `<!-- PLACEHOLDER`. Commit.
+Open `content/_index.md`. Replace the paragraph. Commit.
 
 ## Add or edit a paper
 Open `data/papers.yaml`. Copy an existing entry, paste it below, and edit. Keep the spaces at the start of each line exactly as they are.
