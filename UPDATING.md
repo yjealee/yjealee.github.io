@@ -5,7 +5,7 @@ You can do all of this in the browser on GitHub: open the file, click the pencil
 ## Change your bio
 Edit `content/_index.md`. Replace the paragraph (and delete the `<!-- PLACEHOLDER ... -->` line).
 
-## Change tagline, email, or social links
+## Change email or social links
 Edit `hugo.yaml` under `params:`. To show a link (Google Scholar, GitHub, LinkedIn, ORCID, X), paste the full URL between the quotes. Leave `""` to hide it.
 
 ## Add a paper
@@ -29,8 +29,8 @@ Upload the new PDF to `static/files/` named exactly `cv.pdf` (it replaces the ol
 ## Add your photo
 Upload a headshot to `static/images/` named exactly `photo.jpg`. It appears automatically (portrait, about 800 px wide is plenty). Delete it to hide the photo.
 
-## Add teaching, grants, talks, or service
-Edit `data/teaching.yaml`, `data/awards.yaml`, `data/talks.yaml`, or `data/service.yaml`, and copy an existing entry. To remove a whole section, empty its file.
+## Add a teaching entry
+Edit `data/teaching.yaml` and copy an existing entry.
 
 ## If your GitHub address changes
 Edit `baseURL` in `hugo.yaml`, and the two `https://` addresses in `static/robots.txt` and `static/llms.txt`.

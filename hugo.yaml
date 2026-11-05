@@ -1,17 +1,16 @@
 # NOTE: if your GitHub username/site address changes, edit baseURL below.
 baseURL: "https://yjealee.github.io/"
-title: "Yoonje (Jea) Lee"
+title: "Jea (Yoonje) Lee"
 languageCode: en-us
 enableRobotsTXT: false
 
 params:
   description: "Ph.D. student in Political Science, Department of Government, Harvard University"
-  author: "Yoonje (Jea) Lee"
+  author: "Jea (Yoonje) Lee"
   email: "yoonjelee@g.harvard.edu"
   title_line: "Ph.D. Student in Political Science"
   department: "Department of Government"
   university: "Harvard University"
-  tagline: "I study internal migration, identity, and urban politics in Southeast Asia."
   # Add links below to show them (leave "" to hide):
   social:
     scholar: ""
