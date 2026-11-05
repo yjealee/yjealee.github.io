@@ -15,43 +15,7 @@
       {{ .Content }}
     </section>
 
-    {{ $papers := site.Data.papers }}
-    {{ if $papers }}
-    <section id="research">
-      <h2>Research</h2>
-      {{ $groups := slice (dict "label" "Publications" "keys" (slice "published" "accepted")) (dict "label" "Under Review" "keys" (slice "under review" "revise and resubmit")) (dict "label" "Working Papers" "keys" (slice "working paper")) (dict "label" "Work in Progress" "keys" (slice "work in progress")) }}
-      {{ range $groups }}
-        {{ $keys := .keys }}
-        {{ $label := .label }}
-        {{ $items := where $papers "status" "in" $keys }}
-        {{ if $items }}
-        <h3>{{ $label }}</h3>
-        <ul class="papers">
-          {{ range $items }}
-          <li>
-            <div class="paper-title">
-              {{ if .pdf }}<a href="{{ .pdf | relURL }}" target="_blank" rel="noopener">&ldquo;{{ .title }}&rdquo;</a>
-              {{ else if .link }}<a href="{{ .link }}" target="_blank" rel="noopener">&ldquo;{{ .title }}&rdquo;</a>
-              {{ else }}<span>&ldquo;{{ .title }}&rdquo;</span>{{ end }}
-            </div>
-            <div class="meta">
-              {{ with .coauthors }}{{ if . }}with {{ delimit . ", " " and " }}{{ end }}{{ end }}
-              {{ with .venue }}<em>{{ . }}</em>{{ end }}
-              {{ with .note }}{{ . }}{{ end }}
-            </div>
-            {{ with .abstract }}
-            <details>
-              <summary>Abstract</summary>
-              <p>{{ . }}</p>
-            </details>
-            {{ end }}
-          </li>
-          {{ end }}
-        </ul>
-        {{ end }}
-      {{ end }}
-    </section>
-    {{ end }}
+    {{ partial "research.html" . }}
   </div>
 </div>
 {{ end }}
