@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Site summary for AI agents: /llms.txt
+Sitemap: https://yjealee.github.io/sitemap.xml

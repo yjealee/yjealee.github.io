@@ -1,0 +1,22 @@
+# Status values: "working paper", "work in progress", "under review",
+# "revise and resubmit", "accepted", "published"
+# Optional fields: coauthors, note, abstract, pdf (e.g. "files/paper.pdf"), link, venue
+
+- title: "From Everyday Information to Ethnic Bias: Experimental Evidence from South Korea"
+  status: "working paper"
+  note: "Master's Thesis"
+  coauthors: []
+  abstract: ""
+  pdf: ""
+
+- title: "Gender Belief as Identity: Evidence from Online Dating Behavior in South Korea"
+  status: "working paper"
+  coauthors: ["Abhisheka Dubey", "Jieun Oh"]
+  abstract: ""
+  pdf: ""
+
+- title: "Long-run Consequences of Religious Registration"
+  status: "work in progress"
+  coauthors: []
+  abstract: ""
+  pdf: ""

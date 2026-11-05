@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="wrap page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul>
+    {{ range .Pages }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  <p><a href="{{ "/" | relURL }}">&larr; Home</a></p>
+</div>
+{{ end }}

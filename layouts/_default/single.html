@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="wrap page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p><a href="{{ "/" | relURL }}">&larr; Home</a></p>
+</div>
+{{ end }}
