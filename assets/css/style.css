@@ -7,7 +7,7 @@
   --color-surface: #f5f4f8;
   --color-text: #1c1c1c;
   --color-text-muted: #666666;
-  --color-accent: #0f0f70;
+  --color-accent: #333333;
   --color-heading: #1c1c1c;
   --color-accent-hover: #a51c30;
   --color-border: #e3e1e8;
@@ -31,7 +31,7 @@ body {
 }
 img { max-width: 100%; height: auto; display: block; }
 
-a { color: var(--color-accent); text-decoration: underline; text-decoration-color: rgba(15,15,112,.35); text-underline-offset: 3px; }
+a { color: var(--color-accent); text-decoration: underline; text-decoration-color: rgba(0,0,0,.35); text-underline-offset: 3px; }
 a:visited { color: var(--color-accent); }
 a:hover { color: var(--color-accent-hover); text-decoration: underline; }
 a:focus-visible, summary:focus-visible {
@@ -128,3 +128,6 @@ details p { margin: .5rem 0 0; max-width: 68ch; font-size: .98rem; }
 
 .page #research > h2 { display: none; }
 .page #research { margin-top: 0; }
+
+.page h3.position { margin-top: 0; }
+.meta.small { font-size: .85rem; }
