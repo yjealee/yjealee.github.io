@@ -30,7 +30,16 @@ Upload the new PDF to `static/files/` named exactly `cv.pdf` (it replaces the ol
 Upload a headshot to `static/images/` named exactly `photo.jpg`. It appears automatically (portrait, about 800 px wide is plenty). Delete it to hide the photo.
 
 ## Add a teaching entry
-Edit `data/teaching.yaml` and copy an existing entry.
+Edit `data/teaching.yaml` and copy an existing entry. It appears on the Teaching tab.
+
+## Miscellaneous tab
+The grants, conferences, service, languages and fieldwork come from `data/awards.yaml`, `data/talks.yaml`, `data/service.yaml` and `data/skills.yaml`. Copy an existing entry to add one.
+
+## Research interests and the left column
+Edit `research_interests` and the title lines in `hugo.yaml` under `params:`.
+
+## The [cv] and [email] links at the bottom
+They appear on every page automatically. Email comes from `hugo.yaml`; the CV from `static/files/cv.pdf`.
 
 ## If your GitHub address changes
 Edit `baseURL` in `hugo.yaml`, and the two `https://` addresses in `static/robots.txt` and `static/llms.txt`.
