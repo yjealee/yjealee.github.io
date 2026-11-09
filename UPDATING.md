@@ -11,7 +11,7 @@ While the repo is private, edits are saved but not published. See "Going live" a
 | My bio (the paragraph on the home page) | `content/_index.md` |
 | Papers (Research tab and home page) | `data/papers.yaml` |
 | Name, title, research interests, email | `hugo.yaml` (the `params:` part) |
-| My CV | replace `static/files/cv.pdf` (keep the same name) |
+| My CV | replace `static/files/cv_long.pdf` (keep the same name) |
 | My photo | replace `static/photo.jpg` (keep the same name) |
 | Colors | `assets/css/style.css` (the first block) |
 
