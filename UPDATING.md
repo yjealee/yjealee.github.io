@@ -10,8 +10,6 @@ While the repo is private, edits are saved but not published. See "Going live" a
 |---|---|
 | My bio (the paragraph on the home page) | `content/_index.md` |
 | Papers (Research tab and home page) | `data/papers.yaml` |
-| Teaching tab | `data/teaching.yaml` |
-| Miscellaneous tab (blank for now) | `content/miscellaneous.md` |
 | Name, title, research interests, email | `hugo.yaml` (the `params:` part) |
 | My CV | replace `static/files/cv.pdf` (keep the same name) |
 | My photo | replace `static/photo.jpg` (keep the same name) |
@@ -34,9 +32,6 @@ Open `data/papers.yaml`. Copy an existing entry, paste it below, and edit. Keep 
 ```
 
 Papers are grouped by status automatically. To mark a paper published, change `status` to `"published"` and fill in `venue`.
-
-## Write on the Miscellaneous tab
-Open `content/miscellaneous.md`. Type below the second `---` line. You can write plain text. Use `## Heading` for a heading and `- item` for a bullet list.
 
 ## Replace the CV or photo
 Open the folder (`static/files`, or `static` for the photo), click Add file, then Upload files, and drag in the new file with the exact same name. Commit.
