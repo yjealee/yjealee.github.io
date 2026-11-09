@@ -9,7 +9,7 @@
     <p class="title-line">{{ $p.title_line }}<br>{{ $p.department }}<br>{{ $p.university }}</p>
     <p class="interests"><span class="label">Research interests</span>{{ range split $p.research_interests "; " }}<span class="int">{{ . }}</span>{{ end }}</p>
     <p class="contact">
-      <a href="{{ "files/cv.pdf" | relURL }}" target="_blank" rel="noopener">[cv]</a>
+      <a href="{{ "files/cv_long.pdf" | relURL }}" target="_blank" rel="noopener">[cv]</a>
       <a href="mailto:{{ $p.email }}">{{ $p.email }}</a>
     </p>
   </aside>
