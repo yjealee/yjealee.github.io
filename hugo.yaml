@@ -26,6 +26,9 @@ menu:
     - name: Research
       url: "/research.html"
       weight: 10
+    - name: Contact
+      url: "/contact.html"
+      weight: 20
 
 markup:
   goldmark:
